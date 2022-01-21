@@ -1,0 +1,617 @@
+.data {
+    display: none;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+* {
+    font-family: 'Be Vietnam Pro', sans-serif;
+    margin: 0px;
+    padding: 0px;
+}
+
+#one {
+    margin-top: 60px;
+    background:white;
+}
+
+#checker {
+    position:absolute;
+    top:0px;
+    left:0px;
+    width:100px;
+    height:3px;
+}
+
+#top-Bar {
+    width:100vw;
+    height:59px;
+    background:white;
+    border-bottom: 1px solid rgb(200, 200, 200);
+    position:fixed;
+    top:0px;
+}
+
+#top-Bar.open {
+    width:100vw;
+    height:59px;
+    background:white;
+    border-bottom: 1px solid rgb(200, 200, 200);
+    position:fixed;
+    top:0px;
+    box-shadow: 0px 2px 10px 1px rgba(0, 0, 0, 0.1);
+}
+
+#title {
+    font-weight: 700;
+    font-size: 30px;
+    position:absolute;
+    top:50%;
+    left:10px;
+    transform: translate(0px, -50%);
+    color: rgb(0, 132, 255);
+    width:fit-content;
+}
+
+#title:hover {
+    cursor:pointer;
+}
+
+#title-Now {
+    color: rgb(50, 50, 50);
+}
+
+.line {
+    width:calc(100vw - 50px);
+    height:1px;
+    background:rgb(200, 200, 200);
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 25px;
+}
+
+#img-Holder {
+    width:50px;
+    height:50px;
+    border-radius: 100%;
+    position:absolute;
+    top:50%;
+    transform: translate(0px, -50%);
+    overflow:hidden;
+    right: 7px;
+}
+
+#profile-Img {
+    width:50px;
+    height:50px;
+}
+
+
+@media (max-width:649px) {
+    .g-signin2 {
+        margin-top: 20px;
+        margin-bottom: 50px;
+    }
+    
+    .abcRioButton.abcRioButtonLightBlue {
+        box-shadow: none;
+        border: 1px solid rgb(100, 100, 100);
+        border-radius: 5px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .abcRioButton.abcRioButtonLightBlue:hover {
+        box-shadow: none;
+        border: 1px solid rgb(100, 100, 100);
+        background:rgb(245, 245, 245);
+        border-radius: 5px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .abcRioButtonContentWrapper {
+        box-shadow: none;
+        color: rgb(20, 20, 20);
+    }
+
+    #phone-Image-Holder {
+        width:calc(100vw - 50px);
+        max-width: 300px;
+        margin-bottom: 25px;
+        margin-left: auto;
+        margin-right: auto;
+        height:fit-content;
+        overflow: hidden;
+        border-radius: 20px;
+        box-shadow: 0px 5px 10px 2px rgba(0, 0, 0, 0.1);
+    }
+    
+    #phone-Image {
+        width:100%;
+    }
+    
+    #main-Text {
+        font-size: 10vmin;
+        font-weight: 500;
+        width:calc(100vw - 50px);
+        max-width: 550px;
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 100px;
+        line-height:calc(100% + 10px);
+    }
+    
+    #main-Subtext {
+        width:calc(100vw - 50px);
+        max-width: 350px;
+        text-align: center;
+        font-size: 20px;
+        margin-top: 10px;
+        margin-bottom: 20px;
+        color: rgb(70, 70, 70);
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    #phone-Header {
+        font-size: 9vmin;
+        font-weight: 500;
+        max-width: 350px;
+        width:calc(100vw - 50px);
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 10px;
+    }
+    
+    #phone-Paragraph {
+        font-size: 20px;
+        max-width: 350px;
+        color: rgb(70, 70, 70);
+        font-weight: 500;
+        width:calc(100vw - 50px);
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    #section-Text {
+        width:calc(100vw - 50px);
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 0px;
+        text-align: center;
+        font-size: 20px;
+        color: rgb(0, 0, 0);
+        font-weight: 500;
+    }
+    
+    #down-Arrow {
+        width:45px;
+        height:45px;
+        fill: rgb(100, 100, 100);
+        margin-left: 50%;
+        margin-top: 0px;
+        transform: translate(-50%);
+        margin-bottom: 30px;
+    }
+
+    .add-Space {
+        margin-top: 1000px;
+    }
+
+    #phone-Header-Two {
+        font-size: 9vmin;
+        font-weight: 500;
+        max-width: 350px;
+        width:calc(100vw - 50px);
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 50px;
+    }
+
+    
+}
+
+@media (min-width:649px) {
+    .g-signin2 {
+        margin-top: 20px;
+        margin-bottom: 50px;
+    }
+    
+    .abcRioButton.abcRioButtonLightBlue {
+        box-shadow: none;
+        border: 1px solid rgb(100, 100, 100);
+        border-radius: 5px;
+        margin-left: 25px;
+    }
+    
+    .abcRioButton.abcRioButtonLightBlue:hover {
+        box-shadow: none;
+        border: 1px solid rgb(100, 100, 100);
+        background:rgb(245, 245, 245);
+        border-radius: 5px;
+        margin-left: 25px;
+    }
+    
+    .abcRioButtonContentWrapper {
+        box-shadow: none;
+        color: rgb(20, 20, 20);
+    }
+
+    #one {
+        display: flex;
+    }
+
+    #text-Container {
+        width:calc(100% - 350px);
+        margin-left: 25px;
+    }
+
+    #main-Text {
+        font-size: 7vmin;
+        font-weight: 500;
+        width:calc(100% - 50px);
+        text-align: left;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 100px;
+        line-height:calc(100% + 10px);
+    }
+    
+    #main-Subtext {
+        width:calc(100% - 50px);
+        text-align: left;
+        font-size: 3vmin;
+        margin-top: 10px;
+        margin-bottom: 20px;
+        color: rgb(70, 70, 70);
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    #phone-Image-Holder {
+        width:300px;
+        margin-left: auto;
+        margin-right: auto;
+        height:fit-content;
+        overflow: hidden;
+        border-radius: 20px;
+        margin-bottom: 25px;
+        margin-top: 25px;
+        box-shadow: 0px 5px 10px 2px rgba(0, 0, 0, 0.1);
+    }
+
+    #phone-Image {
+        width:100%;
+    }
+
+    .first-Phone-Image {
+        width:200px;
+        height:100px;
+        overflow: hidden;
+    }
+
+    #section-Text {
+        width:calc(100vw - 50px);
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 0px;
+        text-align: center;
+        font-size: 20px;
+        color: rgb(100, 100, 100);
+    }
+
+    #down-Arrow {
+        width:45px;
+        height:45px;
+        fill: rgb(100, 100, 100);
+        margin-left: 50%;
+        margin-top: 0px;
+        transform: translate(-50%);
+        margin-bottom: 30px;
+    }
+
+    #two {
+        display: flex;
+    }
+
+    #phone-Text-Container {
+        width:calc(100% - 350px);
+        margin-left: 25px;
+    }
+
+    #phone-Container {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    #phone-Header {
+        font-size: 7vmin;
+        font-weight: 500;
+        width:calc(100% - 50px);
+        text-align: left;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 100px;
+        line-height:calc(100% + 10px);
+    }
+
+    #phone-Header-Two {
+        font-size: 7vmin;
+        font-weight: 500;
+        width:calc(100% - 50px);
+        text-align: left;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 100px;
+        line-height:calc(100% + 10px);    
+    }
+
+    #phone-Paragraph {
+        width:calc(100% - 50px);
+        text-align: left;
+        font-size: 3vmin;
+        margin-top: 10px;
+        margin-bottom: 20px;
+        color: rgb(70, 70, 70);
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    #three {
+        display: flex;
+    }
+}
+
+@media (min-width:950px) {
+    .g-signin2 {
+        margin-top: 20px;
+        margin-bottom: 50px;
+    }
+    
+    .abcRioButton.abcRioButtonLightBlue {
+        box-shadow: none;
+        border: 1px solid rgb(100, 100, 100);
+        border-radius: 5px;
+        margin-left: 25px;
+    }
+    
+    .abcRioButton.abcRioButtonLightBlue:hover {
+        box-shadow: none;
+        border: 1px solid rgb(100, 100, 100);
+        background:rgb(245, 245, 245);
+        border-radius: 5px;
+        margin-left: 25px;
+    }
+    
+    .abcRioButtonContentWrapper {
+        box-shadow: none;
+        color: rgb(20, 20, 20);
+    }
+
+    #one {
+        display: flex;
+        width:950px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    #text-Container {
+        width:calc(100% - 350px);
+        margin-left: 25px;
+    }
+
+    #main-Text {
+        font-size: 7vmin;
+        font-weight: 500;
+        width:calc(100% - 50px);
+        text-align: left;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 100px;
+        line-height:calc(100% + 10px);
+    }
+    
+    #main-Subtext {
+        width:calc(100% - 50px);
+        text-align: left;
+        font-size: 3vmin;
+        margin-top: 10px;
+        margin-bottom: 20px;
+        color: rgb(70, 70, 70);
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    #phone-Image-Holder {
+        width:300px;
+        margin-left: auto;
+        margin-right: auto;
+        height:fit-content;
+        overflow: hidden;
+        border-radius: 20px;
+        margin-bottom: 25px;
+        margin-top: 25px;
+        box-shadow: 0px 5px 10px 2px rgba(0, 0, 0, 0.1);
+    }
+
+    #phone-Image {
+        width:100%;
+    }
+
+    .first-Phone-Image {
+        width:200px;
+        height:100px;
+        overflow: hidden;
+    }
+
+    #section-Text {
+        width:calc(100vw - 50px);
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 0px;
+        text-align: center;
+        font-size: 20px;
+        color: rgb(100, 100, 100);
+    }
+
+    #down-Arrow {
+        width:45px;
+        height:45px;
+        fill: rgb(100, 100, 100);
+        margin-left: 50%;
+        margin-top: 0px;
+        transform: translate(-50%);
+        margin-bottom: 30px;
+    }
+
+    #two {
+        display: flex;
+        width:950px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    #phone-Text-Container {
+        width:calc(100% - 350px);
+        margin-left: 25px;
+    }
+
+    #phone-Container {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    #phone-Header {
+        font-size: 7vmin;
+        font-weight: 500;
+        width:calc(100% - 50px);
+        text-align: left;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 100px;
+        line-height:calc(100% + 10px);
+    }
+
+    #phone-Header-Two {
+        font-size: 7vmin;
+        font-weight: 500;
+        width:calc(100% - 50px);
+        text-align: left;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 100px;
+        line-height:calc(100% + 10px);    
+    }
+
+    #phone-Paragraph {
+        width:calc(100% - 50px);
+        text-align: left;
+        font-size: 3vmin;
+        margin-top: 10px;
+        margin-bottom: 20px;
+        color: rgb(70, 70, 70);
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    #three {
+        display: flex;
+        width:950px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media (max-width:850px) {
+    #four {
+        background:rgb(39, 41, 43);
+        width:100vw;
+        height: fit-content;
+    }
+
+    #all-bottom-Bar-Info {
+        width:calc(100vw - 50px);
+        max-width: 850px;
+        margin-left: 50%;
+        transform: translate(-50%);
+        padding-top: 5px;
+        padding-bottom: 20px;
+    }
+
+    .topic {
+        color: rgb(250, 250, 250);
+        font-size: 20px;
+    }
+
+    .sub-Topic-Holder {
+        width:fit-content;
+        height:fit-content;
+        display: flex;
+    }
+
+    .sub-Topic {
+        color: rgb(140, 140, 140);
+        text-decoration: none;
+        font-size: 18px;
+        margin-right: 7px;
+        margin-bottom: 10px;
+    }
+
+    .sub-Topic:hover {
+        color: rgb(170, 170, 170);
+        cursor: pointer;
+    }
+}
+
+
+
+@media (min-width:850px) {
+    #four {
+        background:rgb(39, 41, 43);
+        width:100vw;
+        height: fit-content;
+    }
+
+    #all-bottom-Bar-Info {
+        width:calc(100vw - 50px);
+        max-width: 850px;
+        margin-left: 50%;
+        transform: translate(-50%);
+        padding-top: 5px;
+        padding-bottom: 20px;
+        display: flex;
+    }
+
+    .topic {
+        color: rgb(250, 250, 250);
+        font-size: 20px;
+        margin-right: 10px;
+        margin-left: 10px;
+    }
+
+    .sub-Topic-Holder {
+        width:fit-content;
+        height:fit-content;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .sub-Topic {
+        color: rgb(140, 140, 140);
+        text-decoration: none;
+        font-size: 18px;
+        margin-right: 7px;
+    }
+
+    .sub-Topic:hover {
+        color: rgb(170, 170, 170);
+        cursor: pointer;
+    }
+}
+
+::-webkit-scrollbar {
+    width:0px;
+    height:0px;
+}

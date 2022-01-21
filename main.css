@@ -1,0 +1,2376 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+* {
+    font-family: 'Be Vietnam Pro', sans-serif;
+    margin: 0px;
+    padding: 0px;
+}
+
+#checker {
+    width:100px;
+    height:3px;
+    position: absolute;
+    top:0px;
+    left:0px;
+}
+
+#top-Bar {
+    width:100vw;
+    height:59px;
+    background:white;
+    border-bottom: 1px solid rgb(200, 200, 200);
+    position:fixed;
+    top:0px;
+    transition: .25s;
+}
+
+#title {
+    font-weight: 700;
+    font-size: 30px;
+    position:absolute;
+    top:50%;
+    left:10px;
+    transform: translate(0px, -50%);
+    color: rgb(0, 132, 255);
+    width:1000px;
+}
+
+#title-Now {
+    color: rgb(50, 50, 50);
+}
+
+#profile-Image-Holder {
+    width:50px;
+    height:50px;
+    border-radius: 100%;
+    overflow: hidden;
+    position:absolute;
+    top:50%;
+    right:7px;
+    transform: translate(0px, -50%);
+}
+
+#profile-Image-Holder:hover {
+    cursor: pointer;
+}
+
+#image {
+    width:50px;
+    height:50px;
+}
+
+@media (max-width:749px) {
+    body {
+        background:rgb(250, 250, 250);
+    }
+
+    #search-Holder {
+        width:90px;
+        height:30px;
+        border-radius: 5px;
+        margin-left: 5px;
+        background: transparent;
+        margin-top: 10px;
+    }
+
+    #search-Holder:hover {
+        background:rgba(0, 132, 255, 0.15);
+        margin-top: 10px;
+        margin-left: 5px;
+        cursor: pointer;
+    }
+
+    #search-Users-Container {
+        position:absolute;
+        margin-top:-45px;
+        height:50px;
+        transition: .5s;
+    }
+
+    #search-Icon {
+        width:30px;
+        height:30px;
+        position:absolute;
+        top:50%;
+        transform: translate(0px, -50%);
+        fill: rgb(0, 132, 255);
+    }
+
+    #search-Text {
+        margin-top: -10px;
+        position:absolute;
+        top:50%;
+        left:35px;
+        color: rgb(0, 132, 255);
+    }
+
+    #chats-Holder {
+        position:absolute;
+        width:100%;
+        height:fit-content;
+        margin-top:150px;
+        margin-bottom: 60px;
+    }
+
+    .chat-Container {
+        width:100%;
+        height:65px;
+        background:rgb(250, 250, 250);
+        position:relative;
+        border-bottom: 1px solid rgb(200, 200, 200);
+    }
+
+    .chat-Container:hover {
+        cursor: pointer;
+        background:rgb(230, 230, 230);
+    }
+
+    .profile-Picture-Holder {
+        width:50px;
+        height:50px;
+        border-radius: 100%;
+        overflow: hidden;
+        position:absolute;
+        top:50%;
+        left:10px;
+        transform: translate(0px, -50%);
+    }
+
+    .dummy-Profile-Pic {
+        width:50px;
+    }
+
+    .users-Name {
+        position:absolute;
+        left:70px;
+        top:50%;
+        transform: translate(0px, calc(-50% - 1px));
+        font-size: 21px;
+    }
+
+    .options {
+        position:absolute;
+        right:10px;
+        top:50%;
+        width:40px;
+        height:40px;
+        border-radius: 100%;
+        transform: translate(0px, -50%);
+    }
+
+    .options:hover {
+        cursor: pointer;
+        background: rgb(200, 200, 200);
+    }
+
+    .options-Icon {
+        position:absolute;
+        top:50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width:30px;
+        height:30px;
+    }
+
+    #button-Container {
+        width:100vw;
+        height:45px;
+        position:fixed;
+        top:60px;
+        background:white;
+        border-bottom: 1px solid rgb(200, 200, 200);
+        display: flex;
+        transition: .5s;
+    }
+
+    #button-Container:hover {
+        cursor: pointer;
+    }
+    
+    #button-Container.open {
+        width:100vw;
+        height:45px;
+        position:fixed;
+        top:60px;
+        background:white;
+        border-bottom: 1px solid rgb(200, 200, 200);
+        display: flex;    
+        box-shadow: 0px 2px 10px 1px rgba(0, 0, 0, 0.1);
+        transition: .5s;
+    }
+
+    #button-One {
+        width:calc(50% - .5px);
+        height:100%;
+        border-right: 1px solid rgb(200, 200, 200);
+        position: relative;
+    }
+
+    #button-One:hover {
+        cursor: pointer;
+        background:rgb(240, 240, 240);
+    }
+
+    #chat-Icon {
+        width:35px;
+        height:35px;
+        position:absolute;
+        top:50%;
+        left:50%;
+        transform: translate(-50%, -50%);
+        fill: rgb(0, 132, 255);
+    }
+
+    #button-Two {
+        width:calc(50% - .5px);
+        height:100%;
+        position:relative;
+    }
+
+    #button-Two:hover {
+        cursor: pointer;
+        background:rgb(240, 240, 240);
+    }
+
+    #group-Icon {
+        width:35px;
+        height:35px;
+        position:absolute;
+        top:50%;
+        left:50%;
+        transform: translate(-50%, -50%);
+    }
+
+    #group-Chat-Holder {
+        position:absolute;
+        width:100%;
+        height:fit-content;
+        margin-top: 105px;
+        margin-bottom: 60px;
+        display: none;
+        padding-top: 10px;
+        padding-bottom: 60px;
+    }
+
+    .sent-Content-Img-Holder {
+        display: flex;
+    }
+
+    .sent-Message-Container {
+        width:100%;
+        height:fit-content;
+        position: relative;
+        margin-bottom: 5px;
+    }
+
+    .sent-Message-Name {
+        text-align: right;
+        margin-right: 60px;
+        margin-bottom: 2px;
+        color: rgb(70, 70, 70);
+    }
+
+    .sent-Message-Content {
+        width:width;
+        max-width: calc(100% - 175px);
+        height:fit-content;
+        word-break: inherit;
+        inline-size: width;
+        word-break:normal;
+        font-size: 20px;
+        border-radius: 15px;
+        background:rgb(0, 119, 255);
+        color: white;
+        padding: 4px 6px;
+        margin-left: auto;
+        margin-right: 60px;
+        overflow: hidden;
+    }
+
+    #sent-Message-Alr {
+        margin-right: 60px;
+    }
+
+    .sent-Img-Holder {
+        width:50px;
+        height:50px;
+        border-radius: 100%;
+        overflow: hidden;
+        position:absolute;
+        right: 5px;
+    }
+
+    .sent-Profile-Img {
+        width:50px;
+        height:50px;
+    }
+
+    .rec-Content-Img-Holder {
+        display: flex;
+    }
+
+    .rec-Message-Container {
+        width:100%;
+        height:fit-content;
+        position: relative;
+        margin-bottom: 5px;
+    }
+
+    .rec-Message-Name {
+        text-align: left;
+        margin-left: 60px;
+        margin-bottom: 2px;
+        color: rgb(70, 70, 70);
+    }
+
+    .rec-Message-Content {
+        width:width;
+        max-width: calc(100% - 175px);
+        height:fit-content;
+        word-break: inherit;
+        inline-size: width;
+        word-break:normal;
+        font-size: 20px;
+        border-radius: 15px;
+        background:rgb(215, 215, 215);
+        color: black;
+        padding: 4px 6px;
+        margin-left: 60px;
+        overflow: hidden;
+    }
+
+    #rec-Message-Alr {
+        margin-left: 60px;
+    }
+
+    .rec-Img-Holder {
+        width:50px;
+        height:50px;
+        border-radius: 100%;
+        overflow: hidden;
+        position:absolute;
+        left: 5px;
+    }
+
+    .rec-Profile-Img {
+        width:55px;
+        height:50px;
+    }
+
+    #send-Message-Container {
+        position:fixed;
+        bottom: 0px;
+        width:100vw;
+        height:60px;
+        background:rgb(255, 255, 255);
+    }
+
+    #all-Send-Box-Container {
+        width:calc(100vw - 15px);
+        height:50px;
+        position:absolute;
+        top:50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: 30px;
+        background:rgb(230, 230, 230);
+        transition: .25s;
+    }
+
+    #send-Message-Textbox {
+        width:calc(100vw - 75px);
+        margin-left: 5px;
+        border-radius: 0px;
+        border: none;
+        font-size: 20px;
+        position:absolute;
+        background:transparent;
+        top:50%;
+        transform: translate(0px, -50%);
+        color: rgb(100, 100, 100);
+        font-weight: 500;
+        padding: 4px 5px;
+    }
+
+    .send-Button {
+        width:50px;
+        height:50px;
+        border: 0px;
+        background:transparent;
+        border-radius: 0px;
+        position:absolute;
+        top:50%;
+        right: 5px;
+        transform: translate(0px, -50%);
+    }
+
+    #send-Icon {
+        width:30px;
+        height:30px;
+        fill:rgb(100, 100, 100);
+        transition: .25s;
+    }
+
+    #search-Page-Holder {
+        position:fixed;
+        width:100%;
+        height:calc(100vh - 60px);
+        top:60px;
+        bottom: 0px;
+        background:rgb(250, 250, 250);
+        display: none;
+    }
+
+    #search-Box-Container {
+        width:calc(100vw - 70px);
+        height:45px;
+        border-radius: 25px;
+        right: 10px;
+        margin-top: 10px;
+        background:rgb(230, 230, 230);
+        position:fixed;
+        overflow: hidden;
+    }
+
+    #close-Icon {
+        position:fixed;
+        top:70px;
+        left: 10px;
+        width:33px;
+        height:33px;
+        border-radius: 100%;
+        padding: 5px;
+        background:rgb(230, 230, 230);
+        fill: rgb(50, 50, 50);
+    }
+
+    #close-Icon:hover {
+        cursor: pointer;
+        background: rgb(200, 200, 200);
+    }
+
+    #search-Text-Box {
+        position: absolute;
+        width:calc(100% - 55px);
+        border-radius:none;
+        border:none;
+        font-size: 23px;
+        padding: 5px 5px;
+        right: 10px;
+        top:50%;
+        transform: translate(0px, -50%);
+        background:transparent;
+    }
+
+    #search-Button {
+        width:35px;
+        height:35px;
+        position:relative;
+        border: 0px;
+        border-radius: 100%;
+        background:transparent;
+        top:50%;
+        left:5px;
+        transform: translate(0px, -50%);
+    }
+
+    #search-Button:hover {
+        cursor: pointer;
+        background:rgb(200, 200, 200);
+    }
+
+    #search-Icon-Search-Page {
+        width:30px;
+        height: 30px;
+        position: absolute;
+        top:50%;
+        left:50%;
+        transform: translate(-50%, -50%);
+        fill:rgb(0, 132, 255);
+    }
+
+    #possible-Searches-Holder {
+        position:fixed;
+        height:fit-content;
+        top:130px;
+        border-radius: 20px;
+        width:calc(100% - 20px);
+        left: 50%;
+        transform: translate(-50%);
+    }
+
+    .search-Profile-Holder {
+        width:100%;
+        height:50px;
+        margin-bottom: 5px;
+        position: relative;
+    }
+
+    .search-Profile-Name {
+        position:absolute;
+        top:50%;
+        transform: translate(0px, -50%);
+        left: 60px;
+        font-size: 5.5vmin;
+    }
+
+    .search-Profile-Image-Holder {
+        width:50px;
+        height:50px;
+        overflow: hidden;
+        border-radius: 100%;
+    }
+
+    .search-Profile-Img {
+        width:50px;
+        height:50px;
+    }
+
+    .chat-Button {
+        position: absolute;
+        top:50%;
+        transform: translate(0px, -50%);
+        right:3px;
+        font-size: 15px;
+        background:transparent;
+        border: none;
+        font-weight: 600;
+        border-radius: 5px;
+        margin-top: 0px;
+        padding:2px 5px;
+    }
+
+    .chat-Button:hover {
+        cursor: pointer;
+        background: rgba(0, 132, 255, 0.25);
+    }
+}
+
+@media (min-width:749px) {
+    body {
+        background:rgb(250, 250, 250);
+    }
+
+    #hole-Background {
+        width:100vw;
+        height:calc(100vh - 60px);
+        position:absolute;
+        overflow: hidden;
+        bottom: 0px;
+        display: flex;
+    }
+
+    #search-Holder {
+        position: relative;
+        margin-top: 0px;
+        width:90px;
+        height:30px;
+        border-radius: 5px;
+        margin-left: 5px;
+        background: transparent;
+    }
+
+    #search-Holder:hover {
+        background:rgba(0, 132, 255, 0.15);
+        margin-left: 5px;
+        cursor: pointer;
+    }
+
+    #search-Users-Container {
+        height:30px;
+        transition: .5s;
+    }
+
+    #search-Icon {
+        width:30px;
+        height:30px;
+        fill: rgb(0, 132, 255);
+    }
+
+    #search-Text {
+        position: absolute;
+        top:50%;
+        transform: translate(0px, -50%);
+        color: rgb(0, 132, 255);
+    }
+
+    #chats-Holder {
+        margin-top:48px;
+        width:350px;
+        height:fit-content;
+        overflow-y: scroll;
+        border-right: 1px solid rgb(200, 200, 200);
+    }
+
+    .chat-Container {
+        width:100%;
+        height:65px;
+        background:rgb(250, 250, 250);
+        position:relative;
+        border-bottom: 1px solid rgb(200, 200, 200);
+    }
+
+    .chat-Container:hover {
+        cursor: pointer;
+        background:rgb(230, 230, 230);
+    }
+
+    .profile-Picture-Holder {
+        width:50px;
+        height:50px;
+        border-radius: 100%;
+        overflow: hidden;
+        position:absolute;
+        top:50%;
+        left:10px;
+        transform: translate(0px, -50%);
+    }
+
+    .dummy-Profile-Pic {
+        width:50px;
+    }
+
+    .users-Name {
+        position:absolute;
+        left:70px;
+        top:50%;
+        transform: translate(0px, calc(-50% - 1px));
+        font-size: 21px;
+    }
+
+    .options {
+        position:absolute;
+        right:10px;
+        top:50%;
+        width:40px;
+        height:40px;
+        border-radius: 100%;
+        transform: translate(0px, -50%);
+    }
+
+    .options:hover {
+        cursor: pointer;
+        background: rgb(200, 200, 200);
+    }
+
+    .options-Icon {
+        position:absolute;
+        top:50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width:30px;
+        height:30px;
+    }
+
+    #button-Container {
+        width:100vw;
+        height:45px;
+        position:fixed;
+        top:60px;
+        background:white;
+        border-bottom: 1px solid rgb(200, 200, 200);
+        border-right: 1px solid rgb(200, 200, 200);
+        display: flex;
+        width:350px;
+        transition: .5s;
+    }
+
+    #button-Container:hover {
+        cursor: pointer;
+    }
+    
+    #button-Container.open {
+        height:45px;
+        position:fixed;
+        top:60px;
+        background:white;
+        border-bottom: 1px solid rgb(200, 200, 200);
+        display: flex;    
+        box-shadow: 0px 2px 10px 1px rgba(0, 0, 0, 0.1);
+        transition: .5s;
+    }
+
+    #button-One {
+        width:calc(50% - .5px);
+        height:100%;
+        border-right: 1px solid rgb(200, 200, 200);
+        position: relative;
+    }
+
+    #button-One:hover {
+        cursor: pointer;
+        background:rgb(240, 240, 240);
+    }
+
+    #chat-Icon {
+        width:35px;
+        height:35px;
+        position:absolute;
+        top:50%;
+        left:50%;
+        transform: translate(-50%, -50%);
+        fill: rgb(0, 132, 255);
+    }
+
+    #button-Two {
+        width:calc(50% - .5px);
+        height:100%;
+        position:relative;
+    }
+
+    #button-Two:hover {
+        cursor: pointer;
+        background:rgb(240, 240, 240);
+    }
+
+    #group-Icon {
+        width:35px;
+        height:35px;
+        position:absolute;
+        top:50%;
+        left:50%;
+        transform: translate(-50%, -50%);
+    }
+
+    #normal-Group-Chats {
+        width:calc(100vw - 355px);
+        height:fit-content;
+        margin-top:5px;
+        margin-left:auto;
+        padding-bottom: 60px;
+    }
+
+    #group-Chat-Holder {
+        overflow-y: scroll;
+    }
+
+    .sent-Content-Img-Holder {
+        display: flex;
+    }
+
+    .sent-Message-Container {
+        height:fit-content;
+        position: relative;
+        margin-bottom: 10px;
+    }
+
+    .sent-Message-Name {
+        text-align: right;
+        margin-right: 60px;
+        margin-bottom: 2px;
+        color: rgb(70, 70, 70);
+    }
+
+    .sent-Message-Content {
+        width:fit-content;
+        height:fit-content;
+        word-break: inherit;
+        inline-size: 200px;
+        word-break:normal;
+        font-size: 20px;
+        border-radius: 15px;
+        background:rgb(0, 119, 255);
+        color: white;
+        padding: 4px 6px;
+        margin-left: auto;
+        margin-right: 60px;
+        overflow: hidden;
+    }
+
+    #sent-Message-Alr {
+        margin-right: 60px;
+    }
+
+    .sent-Img-Holder {
+        width:50px;
+        height:50px;
+        border-radius: 100%;
+        overflow: hidden;
+        position:absolute;
+        right: 5px;
+    }
+
+    .sent-Profile-Img {
+        width:50px;
+        height:50px;
+    }
+
+    .rec-Content-Img-Holder {
+        display: flex;
+    }
+
+    .rec-Message-Container {
+        height:fit-content;
+        position: relative;
+        margin-bottom: 5px;
+    }
+
+    .rec-Message-Name {
+        text-align: left;
+        margin-left: 60px;
+        margin-bottom: 2px;
+        color: rgb(70, 70, 70);
+    }
+
+    .rec-Message-Content {
+        width:fit-content;
+        height:fit-content;
+        word-break: inherit;
+        inline-size: 200px;
+        word-break:normal;
+        font-size: 20px;
+        border-radius: 15px;
+        background:rgb(215, 215, 215);
+        color: black;
+        padding: 4px 6px;
+        margin-left: 60px;
+        overflow: hidden;
+    }
+
+    #rec-Message-Alr {
+        margin-left: 60px;
+    }
+
+    .rec-Img-Holder {
+        width:50px;
+        height:50px;
+        border-radius: 100%;
+        overflow: hidden;
+        position:absolute;
+        left: 5px;
+    }
+
+    .rec-Profile-Img {
+        width:55px;
+        height:50px;
+    }
+
+    #send-Message-Container {
+        position:fixed;
+        bottom: 0px;
+        width:calc(100vw - 355px);
+        height:60px;
+        background:rgb(255, 255, 255);
+    }
+
+    #all-Send-Box-Container {
+        width:calc(100% - 15px);
+        height:50px;
+        position:absolute;
+        top:50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: 30px;
+        background:rgb(230, 230, 230);
+        transition: .25s;
+    }
+
+    #send-Message-Textbox {
+        width:calc(100% - 75px);
+        margin-left: 5px;
+        border-radius: 0px;
+        border: none;
+        font-size: 20px;
+        position:absolute;
+        background:transparent;
+        top:50%;
+        transform: translate(0px, -50%);
+        color: rgb(100, 100, 100);
+        font-weight: 500;
+        padding: 4px 5px;
+    }
+
+    .send-Button {
+        width:50px;
+        height:50px;
+        border: 0px;
+        background:transparent;
+        border-radius: 0px;
+        position:absolute;
+        top:50%;
+        right: 5px;
+        transform: translate(0px, -50%);
+    }
+
+    #send-Icon {
+        width:30px;
+        height:30px;
+        fill:rgb(100, 100, 100);
+        transition: .25s;
+    }
+
+    #search-Page-Holder {
+        position:fixed;
+        width:350px;
+        height:calc(100vh - 60px);
+        top:60px;
+        bottom: 0px;
+        background:rgb(250, 250, 250);
+        display: none;
+        border-right: 1px solid rgb(200, 200, 200);
+    }
+
+    #search-Box-Container {
+        width:285px;
+        height:45px;
+        border-radius: 25px;
+        right: 10px;
+        margin-top: 10px;
+        background:rgb(230, 230, 230);
+        position:absolute;
+        overflow: hidden;
+    }
+
+    #close-Icon {
+        position:fixed;
+        top:70px;
+        left: 10px;
+        width:33px;
+        height:33px;
+        border-radius: 100%;
+        padding: 5px;
+        background:rgb(230, 230, 230);
+        fill: rgb(50, 50, 50);
+    }
+
+    #close-Icon:hover {
+        cursor: pointer;
+        background: rgb(200, 200, 200);
+    }
+
+    #search-Text-Box {
+        position: absolute;
+        width:calc(100% - 55px);
+        border-radius:none;
+        border:none;
+        font-size: 23px;
+        padding: 5px 5px;
+        right: 10px;
+        top:50%;
+        transform: translate(0px, -50%);
+        background:transparent;
+    }
+
+    #search-Button {
+        width:35px;
+        height:35px;
+        position:relative;
+        border: 0px;
+        border-radius: 100%;
+        background:transparent;
+        top:50%;
+        left:5px;
+        transform: translate(0px, -50%);
+    }
+
+    #search-Button:hover {
+        cursor: pointer;
+        background:rgb(200, 200, 200);
+    }
+
+    #search-Icon-Search-Page {
+        width:30px;
+        height: 30px;
+        position: absolute;
+        top:50%;
+        left:50%;
+        transform: translate(-50%, -50%);
+        fill:rgb(0, 132, 255);
+    }
+
+    #possible-Searches-Holder {
+        position:fixed;
+        height:fit-content;
+        top:130px;
+        border-radius: 20px;
+        width:calc(100% - 20px);
+        left: 50%;
+        transform: translate(-50%);
+    }
+
+    .search-Profile-Holder {
+        width:335px;
+        height:50px;
+        margin-bottom: 5px;
+        position: relative;
+    }
+
+    .search-Profile-Name {
+        position:absolute;
+        top:50%;
+        transform: translate(0px, -50%);
+        left: 60px;
+        font-size: 20px;
+    }
+
+    .search-Profile-Image-Holder {
+        width:50px;
+        height:50px;
+        overflow: hidden;
+        border-radius: 100%;
+    }
+
+    .search-Profile-Img {
+        width:50px;
+        height:50px;
+    }
+
+    .chat-Button {
+        position: absolute;
+        top:50%;
+        transform: translate(0px, -50%);
+        right:3px;
+        font-size: 15px;
+        background:transparent;
+        border: none;
+        font-weight: 600;
+        border-radius: 5px;
+        margin-top: 0px;
+        padding:2px 5px;
+    }
+
+    .chat-Button:hover {
+        cursor: pointer;
+        background: rgba(0, 132, 255, 0.25);
+    }
+
+    #normal-Chats {
+        width:355px;
+        height:fit-content;
+        overflow-y: scroll;
+    }
+}
+
+
+input:focus, textarea:focus, select:focus{
+    outline:none;
+    transition: .1s;
+}
+
+::-webkit-scrollbar {
+    width: 0px;
+} */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+* {
+    font-family: 'Be Vietnam Pro', sans-serif;
+    margin: 0px;
+    padding: 0px;
+}
+
+#checker {
+    width:100px;
+    height:3px;
+    position: absolute;
+    top:0px;
+    left:0px;
+}
+
+#top-Bar {
+    width:100vw;
+    height:59px;
+    background:white;
+    border-bottom: 1px solid rgb(200, 200, 200);
+    position:fixed;
+    top:0px;
+    transition: .25s;
+}
+
+#title {
+    font-weight: 700;
+    font-size: 30px;
+    position:absolute;
+    top:50%;
+    left:10px;
+    transform: translate(0px, -50%);
+    color: rgb(0, 132, 255);
+    width:1000px;
+}
+
+#title-Now {
+    color: rgb(50, 50, 50);
+}
+
+#profile-Image-Holder {
+    width:50px;
+    height:50px;
+    border-radius: 100%;
+    overflow: hidden;
+    position:absolute;
+    top:50%;
+    right:7px;
+    transform: translate(0px, -50%);
+}
+
+#image {
+    width:50px;
+    height:50px;
+}
+
+@media (max-width:749px) {
+    body {
+        background:rgb(250, 250, 250);
+    }
+
+    #search-Holder {
+        width:90px;
+        height:30px;
+        border-radius: 5px;
+        margin-left: 5px;
+        background: transparent;
+        margin-top: 10px;
+    }
+
+    #search-Holder:hover {
+        background:rgba(0, 132, 255, 0.15);
+        margin-top: 10px;
+        margin-left: 5px;
+        cursor: pointer;
+    }
+
+    #search-Users-Container {
+        position:absolute;
+        margin-top:-45px;
+        height:50px;
+        transition: .5s;
+    }
+
+    #search-Icon {
+        width:30px;
+        height:30px;
+        position:absolute;
+        top:50%;
+        transform: translate(0px, -50%);
+        fill: rgb(0, 132, 255);
+    }
+
+    #search-Text {
+        margin-top: -10px;
+        position:absolute;
+        top:50%;
+        left:35px;
+        color: rgb(0, 132, 255);
+    }
+
+    #chats-Holder {
+        position:absolute;
+        width:100%;
+        height:fit-content;
+        margin-top:150px;
+        margin-bottom: 60px;
+    }
+
+    .chat-Container {
+        width:100%;
+        height:65px;
+        background:rgb(250, 250, 250);
+        position:relative;
+        border-bottom: 1px solid rgb(200, 200, 200);
+    }
+
+    .chat-Container:hover {
+        cursor: pointer;
+        background:rgb(230, 230, 230);
+    }
+
+    .profile-Picture-Holder {
+        width:50px;
+        height:50px;
+        border-radius: 100%;
+        overflow: hidden;
+        position:absolute;
+        top:50%;
+        left:10px;
+        transform: translate(0px, -50%);
+    }
+
+    .dummy-Profile-Pic {
+        width:50px;
+    }
+
+    .users-Name {
+        position:absolute;
+        left:70px;
+        top:50%;
+        transform: translate(0px, calc(-50% - 1px));
+        font-size: 21px;
+    }
+
+    .options {
+        position:absolute;
+        right:10px;
+        top:50%;
+        width:40px;
+        height:40px;
+        border-radius: 100%;
+        transform: translate(0px, -50%);
+    }
+
+    .options:hover {
+        cursor: pointer;
+        background: rgb(200, 200, 200);
+    }
+
+    .options-Icon {
+        position:absolute;
+        top:50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width:30px;
+        height:30px;
+    }
+
+    #button-Container {
+        width:100vw;
+        height:45px;
+        position:fixed;
+        top:60px;
+        background:white;
+        border-bottom: 1px solid rgb(200, 200, 200);
+        display: flex;
+        transition: .5s;
+    }
+
+    #button-Container:hover {
+        cursor: pointer;
+    }
+    
+    #button-Container.open {
+        width:100vw;
+        height:45px;
+        position:fixed;
+        top:60px;
+        background:white;
+        border-bottom: 1px solid rgb(200, 200, 200);
+        display: flex;    
+        box-shadow: 0px 2px 10px 1px rgba(0, 0, 0, 0.1);
+        transition: .5s;
+    }
+
+    #button-One {
+        width:calc(50% - .5px);
+        height:100%;
+        border-right: 1px solid rgb(200, 200, 200);
+        position: relative;
+    }
+
+    #button-One:hover {
+        cursor: pointer;
+        background:rgb(240, 240, 240);
+    }
+
+    #chat-Icon {
+        width:35px;
+        height:35px;
+        position:absolute;
+        top:50%;
+        left:50%;
+        transform: translate(-50%, -50%);
+        fill: rgb(0, 132, 255);
+    }
+
+    #button-Two {
+        width:calc(50% - .5px);
+        height:100%;
+        position:relative;
+    }
+
+    #button-Two:hover {
+        cursor: pointer;
+        background:rgb(240, 240, 240);
+    }
+
+    #group-Icon {
+        width:35px;
+        height:35px;
+        position:absolute;
+        top:50%;
+        left:50%;
+        transform: translate(-50%, -50%);
+    }
+
+    #group-Chat-Holder {
+        position:absolute;
+        width:100%;
+        height:fit-content;
+        margin-top: 105px;
+        margin-bottom: 60px;
+        display: none;
+        padding-top: 10px;
+        padding-bottom: 60px;
+    }
+
+    .sent-Content-Img-Holder {
+        display: flex;
+    }
+
+    .sent-Message-Container {
+        width:100%;
+        height:fit-content;
+        position: relative;
+        margin-bottom: 5px;
+    }
+
+    .sent-Message-Name {
+        text-align: right;
+        margin-right: 60px;
+        margin-bottom: 2px;
+        color: rgb(70, 70, 70);
+    }
+
+    .sent-Message-Content {
+        width:width;
+        max-width: calc(100% - 175px);
+        height:fit-content;
+        word-break: inherit;
+        inline-size: width;
+        word-break:normal;
+        font-size: 20px;
+        border-radius: 15px;
+        background:rgb(0, 119, 255);
+        color: white;
+        padding: 4px 6px;
+        margin-left: auto;
+        margin-right: 60px;
+        overflow: hidden;
+    }
+
+    #sent-Message-Alr {
+        margin-right: 60px;
+    }
+
+    .sent-Img-Holder {
+        width:50px;
+        height:50px;
+        border-radius: 100%;
+        overflow: hidden;
+        position:absolute;
+        right: 5px;
+    }
+
+    .sent-Profile-Img {
+        width:50px;
+        height:50px;
+    }
+
+    .rec-Content-Img-Holder {
+        display: flex;
+    }
+
+    .rec-Message-Container {
+        width:100%;
+        height:fit-content;
+        position: relative;
+        margin-bottom: 5px;
+    }
+
+    .rec-Message-Name {
+        text-align: left;
+        margin-left: 60px;
+        margin-bottom: 2px;
+        color: rgb(70, 70, 70);
+    }
+
+    .rec-Message-Content {
+        width:width;
+        max-width: calc(100% - 175px);
+        height:fit-content;
+        word-break: inherit;
+        inline-size: width;
+        word-break:normal;
+        font-size: 20px;
+        border-radius: 15px;
+        background:rgb(215, 215, 215);
+        color: black;
+        padding: 4px 6px;
+        margin-left: 60px;
+        overflow: hidden;
+    }
+
+    #rec-Message-Alr {
+        margin-left: 60px;
+    }
+
+    .rec-Img-Holder {
+        width:50px;
+        height:50px;
+        border-radius: 100%;
+        overflow: hidden;
+        position:absolute;
+        left: 5px;
+    }
+
+    .rec-Profile-Img {
+        width:55px;
+        height:50px;
+    }
+
+    #send-Message-Container {
+        position:fixed;
+        bottom: 0px;
+        width:100vw;
+        height:60px;
+        background:rgb(255, 255, 255);
+    }
+
+    #all-Send-Box-Container {
+        width:calc(100vw - 15px);
+        height:50px;
+        position:absolute;
+        top:50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: 30px;
+        background:rgb(230, 230, 230);
+        transition: .25s;
+    }
+
+    #send-Message-Textbox {
+        width:calc(100vw - 75px);
+        margin-left: 5px;
+        border-radius: 0px;
+        border: none;
+        font-size: 20px;
+        position:absolute;
+        background:transparent;
+        top:50%;
+        transform: translate(0px, -50%);
+        color: rgb(100, 100, 100);
+        font-weight: 500;
+        padding: 4px 5px;
+    }
+
+    .send-Button {
+        width:50px;
+        height:50px;
+        border: 0px;
+        background:transparent;
+        border-radius: 0px;
+        position:absolute;
+        top:50%;
+        right: 5px;
+        transform: translate(0px, -50%);
+    }
+
+    #send-Icon {
+        width:30px;
+        height:30px;
+        fill:rgb(100, 100, 100);
+        transition: .25s;
+    }
+
+    #search-Page-Holder {
+        position:fixed;
+        width:100%;
+        height:calc(100vh - 60px);
+        top:60px;
+        bottom: 0px;
+        background:rgb(250, 250, 250);
+        display: none;
+    }
+
+    #search-Box-Container {
+        width:calc(100vw - 70px);
+        height:45px;
+        border-radius: 25px;
+        right: 10px;
+        margin-top: 10px;
+        background:rgb(230, 230, 230);
+        position:fixed;
+        overflow: hidden;
+    }
+
+    #close-Icon {
+        position:fixed;
+        top:70px;
+        left: 10px;
+        width:33px;
+        height:33px;
+        border-radius: 100%;
+        padding: 5px;
+        background:rgb(230, 230, 230);
+        fill: rgb(50, 50, 50);
+    }
+
+    #close-Icon:hover {
+        cursor: pointer;
+        background: rgb(200, 200, 200);
+    }
+
+    #search-Text-Box {
+        position: absolute;
+        width:calc(100% - 55px);
+        border-radius:none;
+        border:none;
+        font-size: 23px;
+        padding: 5px 5px;
+        right: 10px;
+        top:50%;
+        transform: translate(0px, -50%);
+        background:transparent;
+    }
+
+    #search-Button {
+        width:35px;
+        height:35px;
+        position:relative;
+        border: 0px;
+        border-radius: 100%;
+        background:transparent;
+        top:50%;
+        left:5px;
+        transform: translate(0px, -50%);
+    }
+
+    #search-Button:hover {
+        cursor: pointer;
+        background:rgb(200, 200, 200);
+    }
+
+    #search-Icon-Search-Page {
+        width:30px;
+        height: 30px;
+        position: absolute;
+        top:50%;
+        left:50%;
+        transform: translate(-50%, -50%);
+        fill:rgb(0, 132, 255);
+    }
+
+    #possible-Searches-Holder {
+        position:fixed;
+        height:fit-content;
+        top:130px;
+        border-radius: 20px;
+        width:calc(100% - 20px);
+        left: 50%;
+        transform: translate(-50%);
+    }
+
+    .search-Profile-Holder {
+        width:100%;
+        height:50px;
+        margin-bottom: 5px;
+        position: relative;
+    }
+
+    .search-Profile-Name {
+        position:absolute;
+        top:50%;
+        transform: translate(0px, -50%);
+        left: 60px;
+        font-size: 5.5vmin;
+    }
+
+    .search-Profile-Image-Holder {
+        width:50px;
+        height:50px;
+        overflow: hidden;
+        border-radius: 100%;
+    }
+
+    .search-Profile-Img {
+        width:50px;
+        height:50px;
+    }
+
+    .chat-Button {
+        position: absolute;
+        top:50%;
+        transform: translate(0px, -50%);
+        right:3px;
+        font-size: 15px;
+        background:transparent;
+        border: none;
+        font-weight: 600;
+        border-radius: 5px;
+        margin-top: 0px;
+        padding:2px 5px;
+    }
+
+    .chat-Button:hover {
+        cursor: pointer;
+        background: rgba(0, 132, 255, 0.25);
+    }
+}
+
+@media (min-width:749px) {
+    body {
+        background:rgb(250, 250, 250);
+        width:100vw;
+        height:100vh;
+        overflow-y: hidden;
+    }
+
+    #hole-Background {
+        width:100vw;
+        height:100vh;
+        overflow-y: scroll;
+        /* display: flex; */
+    }
+
+    #search-Holder {
+        position: relative;
+        margin-top: 5px;
+        margin-bottom: 5px;
+        width:90px;
+        height:30px;
+        border-radius: 5px;
+        margin-left: 5px;
+        background: transparent;
+    }
+
+    #search-Holder:hover {
+        background:rgba(0, 132, 255, 0.15);
+        margin-left: 5px;
+        cursor: pointer;
+    }
+
+    #search-Users-Container {
+        height:30px;
+        transition: .5s;
+    }
+
+    #search-Icon {
+        width:30px;
+        height:30px;
+        fill: rgb(0, 132, 255);
+    }
+
+    #search-Text {
+        position: absolute;
+        top:50%;
+        transform: translate(0px, -50%);
+        color: rgb(0, 132, 255);
+    }
+
+    #chats-Holder {
+        margin-top:105px;
+        width:350px;
+        height:fit-content;
+        overflow-y: scroll;
+        border-right: 1px solid rgb(200, 200, 200);
+    }
+
+    .chat-Container {
+        width:100%;
+        height:65px;
+        background:rgb(250, 250, 250);
+        position:relative;
+        border-bottom: 1px solid rgb(200, 200, 200);
+    }
+
+    .chat-Container:hover {
+        cursor: pointer;
+        background:rgb(230, 230, 230);
+    }
+
+    .profile-Picture-Holder {
+        width:50px;
+        height:50px;
+        border-radius: 100%;
+        overflow: hidden;
+        position:absolute;
+        top:50%;
+        left:10px;
+        transform: translate(0px, -50%);
+    }
+
+    .dummy-Profile-Pic {
+        width:50px;
+    }
+
+    .users-Name {
+        position:absolute;
+        left:70px;
+        top:50%;
+        transform: translate(0px, calc(-50% - 1px));
+        font-size: 21px;
+    }
+
+    .options {
+        position:absolute;
+        right:10px;
+        top:50%;
+        width:40px;
+        height:40px;
+        border-radius: 100%;
+        transform: translate(0px, -50%);
+    }
+
+    .options:hover {
+        cursor: pointer;
+        background: rgb(200, 200, 200);
+    }
+
+    .options-Icon {
+        position:absolute;
+        top:50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width:30px;
+        height:30px;
+    }
+
+    #button-Container {
+        width:100vw;
+        height:45px;
+        position:fixed;
+        top:60px;
+        background:white;
+        border-bottom: 1px solid rgb(200, 200, 200);
+        border-right: 1px solid rgb(200, 200, 200);
+        display: flex;
+        width:350px;
+        transition: .5s;
+    }
+
+    #button-Container:hover {
+        cursor: pointer;
+    }
+    
+    #button-Container.open {
+        height:45px;
+        position:fixed;
+        top:60px;
+        background:white;
+        border-bottom: 1px solid rgb(200, 200, 200);
+        display: flex;    
+        box-shadow: 0px 2px 10px 1px rgba(0, 0, 0, 0.1);
+        transition: .5s;
+    }
+
+    #button-One {
+        width:calc(50% - .5px);
+        height:100%;
+        border-right: 1px solid rgb(200, 200, 200);
+        position: relative;
+    }
+
+    #button-One:hover {
+        cursor: pointer;
+        background:rgb(240, 240, 240);
+    }
+
+    #chat-Icon {
+        width:35px;
+        height:35px;
+        position:absolute;
+        top:50%;
+        left:50%;
+        transform: translate(-50%, -50%);
+        fill: rgb(0, 132, 255);
+    }
+
+    #button-Two {
+        width:calc(50% - .5px);
+        height:100%;
+        position:relative;
+    }
+
+    #button-Two:hover {
+        cursor: pointer;
+        background:rgb(240, 240, 240);
+    }
+
+    #group-Icon {
+        width:35px;
+        height:35px;
+        position:absolute;
+        top:50%;
+        left:50%;
+        transform: translate(-50%, -50%);
+    }
+
+    #normal-Group-Chats {
+        position:absolute;
+        right:5px;
+        top:62px;
+        width:calc(100vw - 355px);
+        height: calc(100vh - 120px);
+        overflow-y: scroll;
+        padding-bottom: 60px;
+    }
+
+    #group-Chat-Holder {
+        
+    }
+
+    .sent-Content-Img-Holder {
+        display: flex;
+    }
+
+    .sent-Message-Container {
+        height:fit-content;
+        position: relative;
+        margin-bottom: 10px;
+    }
+
+    .sent-Message-Name {
+        text-align: right;
+        margin-right: 60px;
+        margin-bottom: 2px;
+        color: rgb(70, 70, 70);
+    }
+
+    .sent-Message-Content {
+        width:fit-content;
+        height:fit-content;
+        word-break: inherit;
+        inline-size: 200px;
+        word-break:normal;
+        font-size: 20px;
+        border-radius: 15px;
+        background:rgb(0, 119, 255);
+        color: white;
+        padding: 4px 6px;
+        margin-left: auto;
+        margin-right: 60px;
+        overflow: hidden;
+    }
+
+    #sent-Message-Alr {
+        margin-right: 60px;
+    }
+
+    .sent-Img-Holder {
+        width:50px;
+        height:50px;
+        border-radius: 100%;
+        overflow: hidden;
+        position:absolute;
+        right: 5px;
+    }
+
+    .sent-Profile-Img {
+        width:50px;
+        height:50px;
+    }
+
+    .rec-Content-Img-Holder {
+        display: flex;
+    }
+
+    .rec-Message-Container {
+        height:fit-content;
+        position: relative;
+        margin-bottom: 5px;
+    }
+
+    .rec-Message-Name {
+        text-align: left;
+        margin-left: 60px;
+        margin-bottom: 2px;
+        color: rgb(70, 70, 70);
+    }
+
+    .rec-Message-Content {
+        width:fit-content;
+        height:fit-content;
+        word-break: inherit;
+        inline-size: 200px;
+        word-break:normal;
+        font-size: 20px;
+        border-radius: 15px;
+        background:rgb(215, 215, 215);
+        color: black;
+        padding: 4px 6px;
+        margin-left: 60px;
+        overflow: hidden;
+    }
+
+    #rec-Message-Alr {
+        margin-left: 60px;
+    }
+
+    .rec-Img-Holder {
+        width:50px;
+        height:50px;
+        border-radius: 100%;
+        overflow: hidden;
+        position:absolute;
+        left: 5px;
+    }
+
+    .rec-Profile-Img {
+        width:50px;
+        height:50px;
+    }
+
+    #send-Message-Container {
+        position:fixed;
+        bottom: 0px;
+        width:calc(100vw - 356px);
+        right: 0px;
+        height:60px;
+        background:rgb(255, 255, 255);
+    }
+
+    #all-Send-Box-Container {
+        width:calc(100% - 15px);
+        height:50px;
+        position:absolute;
+        top:50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: 30px;
+        background:rgb(230, 230, 230);
+        transition: .25s;
+    }
+
+    #send-Message-Textbox {
+        width:calc(100% - 75px);
+        margin-left: 5px;
+        border-radius: 0px;
+        border: none;
+        font-size: 20px;
+        position:absolute;
+        background:transparent;
+        top:50%;
+        transform: translate(0px, -50%);
+        color: rgb(100, 100, 100);
+        font-weight: 500;
+        padding: 4px 5px;
+    }
+
+    .send-Button {
+        width:50px;
+        height:50px;
+        border: 0px;
+        background:transparent;
+        border-radius: 0px;
+        position:absolute;
+        top:50%;
+        right: 5px;
+        transform: translate(0px, -50%);
+    }
+
+    #send-Icon {
+        width:30px;
+        height:30px;
+        fill:rgb(100, 100, 100);
+        transition: .25s;
+    }
+
+    #search-Page-Holder {
+        position:fixed;
+        width:350px;
+        height:calc(100vh - 60px);
+        top:60px;
+        bottom: 0px;
+        background:rgb(250, 250, 250);
+        display: none;
+        border-right: 1px solid rgb(200, 200, 200);
+    }
+
+    #search-Box-Container {
+        width:285px;
+        height:45px;
+        border-radius: 25px;
+        right: 10px;
+        margin-top: 10px;
+        background:rgb(230, 230, 230);
+        position:absolute;
+        overflow: hidden;
+    }
+
+    #close-Icon {
+        position:fixed;
+        top:70px;
+        left: 10px;
+        width:33px;
+        height:33px;
+        border-radius: 100%;
+        padding: 5px;
+        background:rgb(230, 230, 230);
+        fill: rgb(50, 50, 50);
+    }
+
+    #close-Icon:hover {
+        cursor: pointer;
+        background: rgb(200, 200, 200);
+    }
+
+    #search-Text-Box {
+        position: absolute;
+        width:calc(100% - 55px);
+        border-radius:none;
+        border:none;
+        font-size: 23px;
+        padding: 5px 5px;
+        right: 10px;
+        top:50%;
+        transform: translate(0px, -50%);
+        background:transparent;
+    }
+
+    #search-Button {
+        width:35px;
+        height:35px;
+        position:relative;
+        border: 0px;
+        border-radius: 100%;
+        background:transparent;
+        top:50%;
+        left:5px;
+        transform: translate(0px, -50%);
+    }
+
+    #search-Button:hover {
+        cursor: pointer;
+        background:rgb(200, 200, 200);
+    }
+
+    #search-Icon-Search-Page {
+        width:30px;
+        height: 30px;
+        position: absolute;
+        top:50%;
+        left:50%;
+        transform: translate(-50%, -50%);
+        fill:rgb(0, 132, 255);
+    }
+
+    #possible-Searches-Holder {
+        position:fixed;
+        height:fit-content;
+        top:130px;
+        border-radius: 20px;
+        width:calc(100% - 20px);
+        left: 50%;
+        transform: translate(-50%);
+    }
+
+    .search-Profile-Holder {
+        width:335px;
+        height:50px;
+        margin-bottom: 5px;
+        position: relative;
+    }
+
+    .search-Profile-Name {
+        position:absolute;
+        top:50%;
+        transform: translate(0px, -50%);
+        left: 60px;
+        font-size: 20px;
+    }
+
+    .search-Profile-Image-Holder {
+        width:50px;
+        height:50px;
+        overflow: hidden;
+        border-radius: 100%;
+    }
+
+    .search-Profile-Img {
+        width:50px;
+        height:50px;
+    }
+
+    .chat-Button {
+        position: absolute;
+        top:50%;
+        transform: translate(0px, -50%);
+        right:3px;
+        font-size: 15px;
+        background:transparent;
+        border: none;
+        font-weight: 600;
+        border-radius: 5px;
+        margin-top: 0px;
+        padding:2px 5px;
+    }
+
+    .chat-Button:hover {
+        cursor: pointer;
+        background: rgba(0, 132, 255, 0.25);
+    }
+
+    #normal-Chats {
+        width:355px;
+        height:fit-content;
+        overflow-y: scroll;
+    }
+}
+
+
+input:focus, textarea:focus, select:focus{
+    outline:none;
+    transition: .1s;
+}
+
+::-webkit-scrollbar {
+    width: 0px;
+}

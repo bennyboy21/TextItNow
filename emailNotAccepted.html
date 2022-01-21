@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="TextIt Now - Logo.png" type="image/x-icon">
+    <title>Text It Now</title>
+    <meta name="google-signin-client_id" content="704260229141-vrth1int3ogk9ttgcvfijk7ds1uursla.apps.googleusercontent.com">
+    <link rel="shortcut icon" href="TextIt Now - Logo.png" type="image/x-icon">
+    <script src="https://www.gstatic.com/firebasejs/7.21.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.21.0/firebase-auth.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script defer src="emailNotAccepted.js"></script>
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+    * {
+        font-family: 'Be Vietnam Pro', sans-serif;
+        margin: 0px;
+        padding: 0px;
+    }
+    
+    #one {
+        width:100vw;
+        height:100vh;
+        background:white;
+    }
+
+    #top-Bar {
+        width:100vw;
+        height:59px;
+        background:white;
+        border-bottom: 1px solid rgb(200, 200, 200);
+        position:fixed;
+        top:0px;
+        box-shadow: 0px 2px 10px 1px rgba(0, 0, 0, 0.1);
+    }
+
+    #title {
+        font-weight: 700;
+        font-size: 30px;
+        position:absolute;
+        top:50%;
+        left:10px;
+        transform: translate(0px, -50%);
+        color: rgb(0, 132, 255);
+        width:1000px;
+    }
+
+    #title-Now {
+        color: rgb(50, 50, 50);
+    }
+
+    #page-Holder {
+        width:100%;
+        height:fit-content;
+        position:absolute;
+        top:50%;
+        left:50%;
+        transform: translate(-50%, -50%);
+        background:rgb(255, 255, 255);
+    }
+
+    #main-Text {
+        color: rgb(0, 0, 0);
+        width:calc(100% - 100px);
+        text-align: center;
+        font-size: 6.5vmin;
+        margin-left: auto;
+        margin-right: auto;
+        font-weight: 700;
+    }
+
+    #sign-In {
+        font-size: 20px;
+        font-weight: 600;
+        width:fit-content;
+        height:fit-content;
+        padding: 7px 13px;
+        color: white;
+        border-radius: 0px;
+        border: none;
+        border-radius: 5px;
+        font-size: 5.5vmin;
+        background:rgb(0, 132, 255);
+        margin-top: 15px;
+        position:absolute;
+        left:50%;
+        transform: translate(-50%);
+    }
+
+    #two {
+        background:rgb(39, 41, 43);
+        width:100vw;
+        height: fit-content;
+        position:absolute;
+    }
+
+    #all-bottom-Bar-Info {
+        width:calc(100vw - 50px);
+        max-width: 500px;
+        margin-left: 50%;
+        transform: translate(-50%);
+        padding-top: 5px;
+        padding-bottom: 20px;
+    }
+
+    .topic {
+        color: rgb(250, 250, 250);
+        font-size: 20px;
+    }
+
+    .sub-Topic-Holder {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(25px, 1fr));
+        gap: 1rem;
+        align-items: flex-start;
+        margin-bottom: 10px;
+    }
+
+    .sub-Topic {
+        color: rgb(140, 140, 140);
+        text-decoration: none;
+        font-size: 17px;
+    }
+
+    .sub-Topic:hover {
+        color: rgb(170, 170, 170);
+        cursor: pointer;
+    }
+    
+
+    @media (min-width:500px) {
+        #page-Holder {
+            width:100%;
+            height:fit-content;
+            position:absolute;
+            top:50%;
+            left:50%;
+            transform: translate(-50%, -50%);
+            background:rgb(255, 255, 255);
+        }
+
+        #main-Text {
+            color: rgb(0, 0, 0);
+            width:calc(100% - 100px);
+            max-width: 500px;
+            text-align: center;
+            font-size: 35px;
+            margin-left: auto;
+            margin-right: auto;
+            font-weight: 700;
+        }
+
+        #sign-In {
+            font-size: 20px;
+            font-weight: 600;
+            width:fit-content;
+            height:fit-content;
+            padding: 7px 13px;
+            color: white;
+            border-radius: 0px;
+            border: none;
+            border-radius: 5px;
+            font-size: 25px;
+            background:rgb(0, 132, 255);
+            margin-top: 15px;
+            position:absolute;
+            left:50%;
+            transform: translate(-50%);
+        }
+
+        #sign-In:hover {
+            cursor: pointer;
+        }
+    }
+
+    ::-webkit-scrollbar {
+        width:0px;
+        height:0px;
+    }
+
+    ::-webkit-scrollbar-track {
+        background: #f1f1f1;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: #888;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+        background: #555;
+    }
+</style>
+<body>
+    <section id="one">
+        <div id="page-Holder">
+            <h2 id="main-Text">Please enter a student TDSB email</h2>
+            <button type="button" onclick="signOut();" id="sign-In">Sign In</button>
+        </div>
+    </section>
+    <section id="two">
+        <div id="all-bottom-Bar-Info">
+            <div class="topic">TextIt Now
+                <div class="sub-Topic-Holder">
+                    <a href="info.html" class="sub-Topic">Info</a>
+                    <a href="Welcome Page.html" style="width:100px;" class="sub-Topic">Get Started</a>
+                </div>
+            </div>
+            <div class="topic">Partners
+                <div class="sub-Topic-Holder">
+                    <a href="https://www.tdsb.on.ca/About-Us" class="sub-Topic">TDSB</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="g-signin2" data-width="175px" data-height="55px" data-onsuccess="onSignIn" style="display: none;"></div>    
+    <div id="top-Bar">
+        <span id="title">TextIt <span id="title-Now">Now</span></span>
+    </div>
+
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" 
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" 
+        crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</body>
+</html>

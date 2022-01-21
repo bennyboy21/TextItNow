@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-signin-client_id" content="704260229141-vrth1int3ogk9ttgcvfijk7ds1uursla.apps.googleusercontent.com">
+    <link rel="shortcut icon" href="TextIt Now - Logo.png" type="image/x-icon">
+    <script src="https://www.gstatic.com/firebasejs/7.21.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.21.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.21.0/firebase-database.js"></script>
+    <script defer src="Welcome page.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <title>TextItNow - SignIn</title>
+</head>
+<body>
+    <div class="data">
+        <p>Name</p>
+        <p id="alert alert-primary"></p>
+        <p>Profile Pic</p>
+        <img id="image" class="rounded-circle" width="100" height="100">
+        <p>Email</p>
+        <p id="email"></p>
+        <button type="button" class="btn btn-danger" onclick="signOut();">Sign Out</button>
+    </div>
+    <div id="checker"></div>
+
+    <section id="one">
+        <div id="text-Container">
+            <div id="main-Text">Sign in with your student email and TextIt Now</div>
+            <div id="main-Subtext">TextIt Now is a free online chatting app. you can chat with anyone from your school.</div>
+            <div class="g-signin2" data-width="175px" data-height="55px" data-onsuccess="onSignIn"></div>    
+        </div>
+        <div id="phone-Container">
+            <div id="phone-Image-Holder" class="first-Phone-Image">
+                <img id="phone-Image" src="Main Image Two.png">
+            </div>
+        </div>
+    </section>
+    <div class="line"></div> 
+    <div id="section-Text">See what TextIt Now is all about</div>
+    <svg id="down-Arrow" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000">
+        <path d="M0 0h24v24H0V0z" fill="none"/><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/>
+    </svg>
+
+    <section id="two">
+        <div id="phone-Image-Holder">
+            <img id="phone-Image" src="Main Image One.PNG">
+        </div>
+        <div id="phone-Text-Container">
+            <h2 id="phone-Header">School Group Chat</h2>
+            <p id="phone-Paragraph"> Meet new people from your school with the whole school group chat feature. This feature really allows you to find people and groups in your school you may have never known about.</p>
+        </div>
+    </section>
+
+    <section id="three">
+        <div id="phone-Text-Container" class="phone-Text-Container-Two">
+            <h2 id="phone-Header-Two">Find Students In Your District</h2>
+            <p id="phone-Paragraph">With TextIt Now you can search and find other students all over your district just by searching their name. View supported districts at the bottom of the page under partners.</p>
+        </div>
+        <div id="phone-Image-Holder">
+            <img id="phone-Image" src="Main Image Three.png">
+        </div>
+    </section>
+
+    <section id="four">
+        <div id="all-bottom-Bar-Info">
+            <div class="topic">TextIt Now
+                <div class="sub-Topic-Holder">
+                    <a href="info.html" class="sub-Topic">Info</a>
+                    <a href="Welcome Page.html" style="width:100px;" class="sub-Topic">Get Started</a>
+                </div>
+            </div>
+            <div class="topic">Partners
+                <div class="sub-Topic-Holder">
+                    <a href="https://www.tdsb.on.ca/About-Us" class="sub-Topic">TDSB</a>
+                </div>
+            </div>
+            <div class="topic">Contact
+                <div class="sub-Topic-Holder">
+                    <a href="https://mail.google.com/mail/u/3/#inbox?compose=GTvVlcSBpgVkNNzZjxSrGGDNJNFlSVjFcJdklrlLbvJWcgKBTmWnFPSHNGjbfqdTblfXddTqZrqbW" class="sub-Topic">textitnow.ca@gmail.com</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="top-Bar">
+        <span id="title">TextIt <span id="title-Now">Now</span></span>
+    </div>
+
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" 
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" 
+        crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</body>
+</html>
